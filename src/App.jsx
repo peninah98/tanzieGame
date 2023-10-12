@@ -4,6 +4,11 @@ import {nanoid} from "nanoid"
 
 function App() {
   const [dice, setDice] = useState(allNewDice())
+  const [tenzies, setTenzies] = React.useState(false)
+    
+    React.useEffect(() => {
+        console.log("Dice state changed")
+    }, [dice])
   function generateNewDie() {
     return {
         value: Math.ceil(Math.random() * 6),
